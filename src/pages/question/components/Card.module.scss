@@ -1,0 +1,54 @@
+@import "../../../styles/variables.scss";
+
+.Card {
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+  margin: 30px 30px 0;
+
+  .title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #242529;
+  }
+
+  .desc {
+    font-weight: normal;
+    color: #626470;
+    font-size: 32px;
+    margin: 20px 0;
+    word-break: break-all;
+    line-height: 50px;
+  }
+
+  .member {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .userInfo {
+      display: flex;
+      align-items: center;
+
+      .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 3px solid #aaa;
+        background: url('../../../assets/icons/profile.svg') no-repeat center/cover;
+      }
+
+      .userName {
+        font-size: 28px;
+        color: #999ead;
+        margin-left: 10px;
+      }
+    }
+
+    .share {
+      width: 36px;
+      height: 32px;
+    }
+  }
+}

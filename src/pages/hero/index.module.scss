@@ -1,0 +1,51 @@
+@import "../../styles/utils.scss";
+
+.wrapper {
+  min-height: 200vh;
+  background: #F2F4F5;
+  @include safeAreaPaddingBottom(10px);
+}
+
+.headerBox {
+  background-image: linear-gradient(to left top, #a8edea 0%, #fed6e3 80%);
+
+  .headerMain {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .content {
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}
+
+.regionsBar {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.groups {
+  background-color: #ffffff;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-right: 20px;
+}
+
+.group {
+  position: relative;
+  white-space: nowrap;
+  font-size: 28px;
+  padding: 20px 24px;
+  display: inline-block;
+  border-bottom: 6px solid transparent;
+
+  &.active {
+    border-color: #FFE02D;
+  }
+}

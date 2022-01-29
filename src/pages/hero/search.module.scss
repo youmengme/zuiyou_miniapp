@@ -1,0 +1,25 @@
+@import "../../styles/utils.scss";
+
+.wrapper {
+  min-height: 200vh;
+  background: #F2F4F5;
+  @include safeAreaPaddingBottom(10px);
+}
+
+.loadingNext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  font-size: 24px;
+  color: #cccccc;
+}
+
+.searchEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  font-size: 28px;
+  color: #999999;
+}

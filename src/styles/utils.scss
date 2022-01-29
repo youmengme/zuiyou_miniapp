@@ -1,0 +1,135 @@
+@import "./variables.scss";
+
+@mixin line1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin line($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $lines;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+@mixin safeAreaPaddingBottom($paddingBottom: 0px) {
+  @if $paddingBottom==0px {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  @else {
+    padding-bottom: calc(#{$paddingBottom} + constant(safe-area-inset-bottom));
+    padding-bottom: calc(#{$paddingBottom} + env(safe-area-inset-bottom));
+  }
+}
+
+@mixin safeAreaHeight($height: 0px) {
+  @if $height==0px {
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+  }
+
+  @else {
+    height: calc(#{$height} + constant(safe-area-inset-bottom));
+    height: calc(#{$height} + env(safe-area-inset-bottom));
+  }
+}
+
+@mixin safeAreaBottom($bottom: 0px) {
+  @if $bottom==0px {
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+  }
+
+  @else {
+    bottom: calc(#{$bottom} + constant(safe-area-inset-bottom));
+    bottom: calc(#{$bottom} + env(safe-area-inset-bottom));
+  }
+}
+
+@mixin allLoaded() {
+  position: relative;
+  width: px2platform(300px);
+  margin: 0 auto;
+  text-align: center;
+  font-size: px2platform(24px);
+  color: #999;
+  padding: px2platform(60px) 0;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: px2platform(88px);
+    height: px2platform(2px);
+    top: 50%;
+  }
+
+  &::before {
+    background: linear-gradient(to right, #EEEEEE 0%, #C5C5C5 100%);
+    background-size: 100%;
+    left: px2platform(-8px);
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    background: linear-gradient(to left, #EEEEEE 0%, #C5C5C5 100%) no-repeat;
+    background-size: 100%;
+    transform: translateY(-50%);
+    right: px2platform(-8px);
+  }
+}
+
+@function css-function($function, $values...) {
+  @return $function+unquote('(')+$values+unquote(')');
+}
+
+@function css-min($values...) {
+  @return css-function(min, $values);
+}
+
+@function css-max($values...) {
+  @return css-function(max, $values);
+}
+
+@function css-clamp($values...) {
+  @return css-function(clamp, $values);
+}
+
+@mixin themeButton() {
+  background: linear-gradient(90deg, #FFF03B 0%, #FFD629 100%);
+  border-radius: 100px;
+  width: 100%;
+  padding: px2platform(28px);
+  line-height: 1;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  @include text-700;
+  @include font-600;
+}
+
+@mixin bg($url) {
+  background: url($url) no-repeat center / cover;
+}
+@function assets($path) {
+  @return '../assets' + $path
+}
+
+@mixin enlarge-click-area($zindex, $size: -20px) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: $zindex;
+    left: $size;
+    top: $size;
+    right: $size;
+    bottom: $size;
+  }
+}
+

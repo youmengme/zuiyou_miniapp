@@ -1,0 +1,52 @@
+$section-bg: #ffffff;
+$global-bg: #F5F5F5;
+$theme: #FFE02D;
+$android-header: #222222;
+$iOS-header: #222222;
+$padding: 32px;
+$header: 88px;
+$total: 750px;
+$dark: #222222;
+$environmental: #13AFB6;
+$light: $section-bg;
+$page-width: 750px;
+
+$tabbar-height: 164px;
+
+$z-index-page: 9;
+$z-index-app: 99;
+$z-index-modal: 299;
+$z-index-fullscreen: 499;
+$z-index-toast: 999;
+
+$modal-max-height: 70vh;
+$modal-min-height: 50px;
+
+@mixin page {}
+
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function px2platform($px) {
+  @return strip-units($px) * 1px;
+}
+
+@function ossImg($relativeImg) {
+  @return 'https://sr.aihuishou.com/miniapps/jupiter'+$relativeImg+"?_v="+$app_version;
+}
+
+$header: px2platform(88px);
+
+@mixin input($height: $header) {
+  height: $height;
+  min-height: $height;
+  line-height: $height;
+}
+
+@mixin themeButtonBg() {
+  background: linear-gradient(90deg, #fff03b, #ffd629);
+}
+
+$app-width: px2platform($page-width);

@@ -1,0 +1,63 @@
+@import "../../styles/utils.scss";
+
+.wrapper {
+  background: #F2F4F5;
+  @include safeAreaPaddingBottom(10px);
+}
+
+.headerBox {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(150deg, #defffd 19%, #f5f6f8 65%);
+}
+
+.headerMain {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .back {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 24px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    padding-left: 30px;
+    background-color: rgba(200, 200, 200, 0.15);
+    border-radius: 25px;
+
+    .searchInput {
+      width: 100%;
+      height: 100%;
+      color: #555;
+    }
+
+    .searchIcon {
+      padding: 0 30px;
+    }
+  }
+}
+
+.searchEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  font-size: 28px;
+  color: #999999;
+}
+
+.loadingNext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  font-size: 24px;
+  color: #cccccc;
+}

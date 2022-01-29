@@ -1,0 +1,25 @@
+.Icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  background-color: currentColor;
+}
+
+.Share {
+  mask-image: url('./icons/icon-share.svg');
+}
+
+.Func {
+  mask-image: url('./icons/icon-function.svg');
+}
+
+.Search {
+  mask-image: url('./icons/icon-search.svg');
+}
+
+.ArrowLeft {
+  mask-image: url('./icons/icon-arrow-left.svg');
+}
