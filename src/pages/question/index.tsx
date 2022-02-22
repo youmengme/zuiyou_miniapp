@@ -5,9 +5,10 @@ import { View } from '@tarojs/components'
 import HeaderCard from './components/HeaderCard'
 import Card from './components/Card'
 import { getWikis } from '../../api'
+import Tabbar from '../../components/Tabbar'
+import { navigateTo, routes } from '../../routes'
 
 import classes from './index.module.scss'
-import { navigateTo, routes } from '../../routes'
 
 const fetchProjects = ({ pageParam = 0 }) => getWikis(pageParam)
 
@@ -58,27 +59,30 @@ function Index() {
   return (
     <View className={classes.wrapper}>
       <HeaderCard onSearch={() => navigateTo(routes.Question.Search())} />
-      {
-        wikis.map(ele => (
-          <Card data={ele} key={ele.wiki.id} />
-        ))
-      }
-      {
-        isFetchingNextPage
-          ? (
-            <View className={classes.loadingNext}>加载中...</View>
-          )
-          : null
-      }
-      {
-        !wikis?.length && !isFetching
-          ? (
-            <View className={classes.searchEmpty}>
-              暂时还没收录相关的问题诶~
-            </View>
-          )
-          : null
-      }
+      <View className={classes.main}>
+        {
+          wikis.map(ele => (
+            <Card data={ele} key={ele.wiki.id} />
+          ))
+        }
+        {
+          isFetchingNextPage
+            ? (
+              <View className={classes.loadingNext}>加载中...</View>
+            )
+            : null
+        }
+        {
+          !wikis?.length && !isFetching
+            ? (
+              <View className={classes.searchEmpty}>
+                暂时还没收录相关的问题诶~
+              </View>
+            )
+            : null
+        }
+      </View>
+      <Tabbar />
     </View>
   )
 }

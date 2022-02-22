@@ -9,13 +9,6 @@ export type DeviceProps = Taro.getSystemInfoSync.Result & {
 
 export function getSystemInfo() {
   const systemInfo = systemInfoResult
-  if (systemInfo.brand === 'devtools') {
-    systemInfo.brand = systemInfo.system.indexOf('iOS') >= 0 ? 'iPhone' : ''
-    systemInfo.model = systemInfo.model.indexOf('iPhone') >= 0 ? 'iPhone12,1' : ''
-  } else {
-    // iPhone 12 Pro<iPhone13,3> => iPhone13,3
-    systemInfo.model = systemInfo.model.replace(/.*<(.*)>/ig, '$1')
-  }
   const { titleBarHeight } = systemInfo as any
   return {
     ...systemInfo,
@@ -32,10 +25,9 @@ export function getMenuBarBounding() {
   return menuBarBoundingResult
 }
 
-export async function getDistanceFromStatusBarToMenuBar() {
+export function getDistanceFromStatusBarToMenuBar() {
   const systemInfo = systemInfoResult
-  const menuBarBounding = await getMenuBarBounding()
+  const menuBarBounding = getMenuBarBounding()
 
-  const adjust = menuBarBounding.top - systemInfo.statusBarHeight
-  return adjust
+  return menuBarBounding.top - systemInfo.statusBarHeight
 }

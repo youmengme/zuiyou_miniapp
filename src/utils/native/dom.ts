@@ -248,3 +248,16 @@ export function analyzeScene<T extends object = Record<string, string>>(
   }
   return tempObj as T
 }
+
+export async function pageScrollToSelector(
+  selector: string,
+  option?: {
+    duration?: number,
+    top?: number
+  }
+) {
+  const { duration = 300, top = 0 } = option || {}
+  const options: Taro.pageScrollTo.Option = { duration }
+  options.scrollTop = (await getElementOffsetTop(selector) - top)
+  Taro.pageScrollTo(options)
+}

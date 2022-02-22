@@ -1,5 +1,5 @@
 export default {
-  navigationBarTitleText: 'hero',
+  navigationBarTitleText: 'hero-detail',
   enableShareAppMessage: true,
   navigationStyle: 'custom',
 };

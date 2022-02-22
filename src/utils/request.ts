@@ -1,6 +1,7 @@
 import Taro from '@tarojs/taro'
 
-export default function request<T>(method, url, data) {
+export default function request<T>(method, path, data) {
+  console.log('data', data)
   return new Promise<Response<T>>((resolve, reject) => {
     Taro
       .cloud
@@ -9,10 +10,10 @@ export default function request<T>(method, url, data) {
         'config': {
           'env': 'prod-3g1p7vbd72d7fd09'
         },
-        'path': url,
         'header': {
           'X-WX-SERVICE': 'express-s6zf'
         },
+        path,
         method,
         data
       })

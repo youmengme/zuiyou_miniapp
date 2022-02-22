@@ -19,9 +19,15 @@
           "scene": null
         },
         {
-          "name": "",
+          "name": "hero",
           "pathName": "pages/hero/index",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "hero-detail",
+          "pathName": "pages/hero/detail",
+          "query": "id=155",
           "scene": null
         }
       ]

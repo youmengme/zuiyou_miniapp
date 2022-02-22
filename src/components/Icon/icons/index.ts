@@ -1,20 +1,29 @@
 import Search from './icon-search.svg'
 import Share from './icon-share.svg'
+import Add from './icon-add.svg'
+import Reduce from './icon-reduce.svg'
 import Func from './icon-function.svg'
 import ArrowLeft from './icon-arrow-left.svg'
+import TriangleDown from './icon-triangle-down.svg'
 
 const icons = {
   Search,
   Share,
   Func,
-  ArrowLeft
+  Add,
+  Reduce,
+  ArrowLeft,
+  TriangleDown,
 }
 
 export {
+  Add,
+  Reduce,
   Search,
   Share,
   Func,
-  ArrowLeft
+  ArrowLeft,
+  TriangleDown,
 }
 
 export default icons

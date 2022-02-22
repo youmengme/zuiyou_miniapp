@@ -79,6 +79,7 @@ function Header(props: HeaderProps) {
 
     updateStyle()
   }, [])
+
   return (
     <Fragment>
       <View

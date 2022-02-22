@@ -1,0 +1,36 @@
+@import "../styles/variables.scss";
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &.sticky {
+    position: sticky;
+  }
+  &.safe {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  .back {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    padding-left: 20px;
+
+    .icon {
+      font-size: 32px;
+    }
+  }
+  .content {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+  }
+}

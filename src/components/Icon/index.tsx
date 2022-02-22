@@ -12,7 +12,10 @@ const IconClass: Record<IconType, string> = {
   Search: classes.Search,
   Share: classes.Share,
   Func: classes.Func,
+  Add: classes.Add,
+  Reduce: classes.Reduce,
   ArrowLeft: classes.ArrowLeft,
+  TriangleDown: classes.TriangleDown,
 }
 
 export interface IconProps {
@@ -71,6 +74,10 @@ export const Share = (props: Omit<IconProps, 'icon'>) => (
 
 export const ArrowLeft = (props: Omit<IconProps, 'icon'>) => (
   <Index {...props} icon='ArrowLeft' />
+)
+
+export const TriangleDown = (props: Omit<IconProps, 'icon'>) => (
+  <Index {...props} icon='TriangleDown' />
 )
 
 export default Index

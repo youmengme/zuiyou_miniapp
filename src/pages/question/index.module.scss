@@ -3,6 +3,10 @@
 .wrapper {
   background: #F2F4F5;
   @include safeAreaPaddingBottom(10px);
+
+  .main {
+    min-height: 100vh;
+  }
 }
 
 .loadingNext {
